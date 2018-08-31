@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HappyTravelLtd.</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/ecmascript">
+        $(document).ready(function() {
+            $("#login").click(function() {
+                var email = $("#email").val();
+                var pwd = $("#pwd").val();
+
+                if (email == "123@gmail.com" && pwd == "123") {
+                    window.location.href = "loggedin.html";
+                } else {
+                    alert("Invaild Email or Password");
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body style="background-color: lightgray">
+    <header>
+        <nav class="navbar navbar-inverse bg-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                    <b></b><a class="navbar-brand" href="index.html">HappyTravelLtd.</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="flight.html">FLIGHT</a></li>
+                        <li><a href="hotels.html">HOTEL</a></li>
+                        <li><a href="specialOffer.html">SPECIAL OFFERS</a></li>
+                        <li><a href="contactus.html">CONTACTS US</a></li>
+                        <li><a href="game.html">MINI GAME</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--  <li><a href="#">Link</a></li> -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
+                            <ul class="dropdown-menu" style="background-color: #222">
+                                <li style="margin: 5px">
+                                    <div class="form-group">
+                                        <label for="email" style="color: lightgray; width: 200px">Email address:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd" style="color: lightgray">Password:</label>
+                                        <input type="password" class="form-control" id="pwd" placeholder="Password">
+                                    </div>
+                                    <div class="form-group"><a href="Register.html" style="color: gray">&nbsp;Register Now!</a></div>
+
+                                    <div class="form-group">
+                                        <button id="login" class="btn btn-default" style="float: right; margin: 5px">Login</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+
+    <!--  Images Slider -->
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="img/slide.jpg" alt="Los Angeles" style="width:100%;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>LONDON</h1>
+                        <h3>From $1000</h3>
+                        <a href="flight.html" type="button" class="btn btn-default" style="margin: 15px">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="img/slide1.jpg" alt="Chicago" style="width:100%;">
+
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>MALDIVES</h1>
+                        <h3>From $2000</h3>
+                        <a href="flight.html" type="button" class="btn btn-default" style="margin: 15px">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="img/slide2.jpg" alt="New york" style="width:100%;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>VENICE</h1>
+                        <h3>From $1600</h3>
+                        <a href="flight.html" type="button" class="btn btn-default" style="margin: 15px">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <!--  End of Images Slider -->
+    <div style="height: 20px">
+    </div>
+    <hr>
+    <!-- Hot Flight -->
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="col-md-12">
+                <p style="font-size: 40px">Hot Flight</p>
+            </div>
+            <div class="col-xs-4">
+                <center>
+                    <img src="img/hotflight1.jpg" alt="" width="90%" class="">
+                    <a href="flight.html" class="btn btn-default" style="width: 90%"><h5>Barcelona</h5></a>
+                </center>
+
+            </div>
+            <div class="col-xs-4">
+                <center>
+                    <img src="img/hotflight2.jpg" alt="" width="90%">
+                    <a href="flight.html" class="btn btn-default" style="width: 90%; margin-bottom: 20px"><h5>GOA</h5></a>
+                </center>
+            </div>
+            <div class="col-xs-4">
+                <center>
+                    <img src="img/hotflight3.jpg" alt="" width="90%">
+                    <a href="flight.html" class="btn btn-default" style="width: 90%"><h5>PARIS</h5></a>
+                </center>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+
+    </div>
+
+
+    <!--  End of Flight -->
+    <!--    Some Text  -->
+    <div class="row" style="margin: 20px;">
+        <div class="col-md-12" style="margin: 20px">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <p><b>Save on Travel with HappyTravelLtd.</b></p>
+                    <p>Plan the perfect trip with HappyTravelLtd, China's largest online travel agency. Whether you're a leisure traveler, going on a business trip or looking to set up a corporate travel account, HappyTravelLtd helps you travel the world with cheap flights, discount hotel reservations, China train tickets, tours and vacation package deals through our convenient online travel booking service.Find a great global travel deal or get the biggest savings on business travel; HappyTravelLtd has you covered. Whether you want to travel internationally or need help with your China travel plans, make use of our secure, easy-to-navigate English-language site, supported by award-winning 24/7 customer service. With HappyTravelLtd, quality travel service in English, as well as Mandarin, Cantonese, Japanese and Korean, is just a call-or a few clicks-away.</p>
+                    <p><b>Easily Customize Your Trip with the Best Hotel and Flight Deals</b></p>
+                    <p>It's easy to customize your travel experience with our robust flight and hotel search filter options and HappyTravelLtd travel tools like our flight fare alerts, deal-finder calendar, flight + hotel deals, early bird deals and cheap vacation package deals. Plus, earn HappyTravelLtd Points and C-Money to get great travel rewards, including free flights and hotel stays ! Finally, you can find cheap flight tickets and the best hotel deals by destinations worldwide on HappyTravelLtd. With HappyTravelLtd, the world is just a few clicks away! And HappyTravelLtd's secure payment system takes the stress out of travel in China or around the world by providing easy payment options, including credit cards, debit cards, PayPal, UnionPay online payment and Money.</p>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
+    <hr> Copyright by HappyTravelLtd.
+</body>
+
+</html>

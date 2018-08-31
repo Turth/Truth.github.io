@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HappyTravelLtd.</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/ecmascript">
+        var jd = {
+            "name": ["SouthWest Airline", "American Airlines", "Copa Airlines", "Singapore Airlines", "Air New Zealand", "Alsaka Airlines", "Air Namibia", "China Eastern", "Qantas Airline", "Malaysia Airline", "Philippine Airlines", "AirArmenia"],
+            "icon": ["img/airline/southwest.jpg", "img/airline/american.jpg", "img/airline/copa.jpg", "img/airline/singapore.jpg", "img/airline/newzealand.jpg", "img/airline/alaska.jpg", "img/airline/namibia.jpg", "img/airline/chinaeastern.jpg", "img/airline/qanta.jpg", "img/airline/malaysia.jpg", "img/airline/philippin.jpg", "img/airline/airarmenia.jpg"],
+            "from": ["Hong Kong", "Hong Kong", "Hong Kong", "New Zealand", "New Zealand", "New Zealand", "Hong Kong", "Hong Kong", "Hong Kong", "London", "London", "London"],
+            "to": ["New Zealand", "New Zealand", "New Zealand", "Hong Kong", "Hong Kong", "Hong Kong", "London", "London", "London", "Hong Kong", "Hong Kong", "Hong Kong"],
+            "leave": ["12/3/2017", "8/3/2017", "12/4/2017", "12/5/2017", "12/3/2017", "12/5/2017", "14/3/2017", "1/9/2017", "11/10/2017", "11/1/2017", "2/3/2017", "1/1/2017"],
+            "return": ["12/5/2017", "12/4/2017", "2/8/2017", "1/7/2017", "14/3/2017", "13/5/2017", "14/3/2017", "12/9/2017", "11/11/2017", "2/2/2017", "2/4/2017", "1/1/2017"],
+            "people": [1, 3, 4, 2, 5, 10, 2, 7, 9, 1, 12, 6],
+            "price": ["$1000", "$1200", "$800", "$900", "$1300", "$1700", "$500", "$1800", "$3200", "$7200", "$12000", "$2200"]
+        }
+        $(document).ready(function() {
+            $(function() {
+                $('#stage').on('click', 'button', function() {
+                    var num = ($(this).attr("num"));
+                    $("#cart").append("<tr>");
+                    $("#cart").append("<th></th><th>From:</th><th>To:</th><th>Leaving</th><th>Returning</th><th>People</th><th>Price</th><th> </th>");
+                    $("#cart").append("</tr>");
+                    $("#cart").append("<tr>");
+                    $("#cart").append("<td><img src='" + jd.icon[num] + "' width=100></td><td>" + jd.from[num] + "</td><td>" + jd.to[num] + "</td><td>" + jd.leave[num] + "</td><td>" + jd.return[num] + "</td><td>" + jd.people[num] + "</td><td>" + jd.price[num]);
+                    $("#cart").append("</tr>");
+                    $("#cart").append("<tr><td colspan='6'></td></tr>");
+                    $("#itemNum").html((parseInt($("#itemNum").html()) + 1));
+                });
+            });
+
+            $("#clear").click(function() {
+                $("#cart").html("");
+                $("#itemNum").html("0");
+            });
+            $("#login").click(function() {
+                var email = $("#email").val();
+                var pwd = $("#pwd").val();
+
+                if (email == "123@gmail.com" && pwd == "123") {
+                    window.location.href = "loggedin.html";
+                } else {
+                    alert("Invaild Email or Password");
+                }
+            });
+            for (i = 0; i < jd.name.length; i++) {
+                $("#stage").append("<tr>");
+                $("#stage").append("<td colspan='2'><h2>" + jd.name[i] + "<h2></td>");
+                $("#stage").append("<td><img src='" + jd.icon[i] + "' height='60'></td>");
+                $("#stage").append("</tr>");
+                $("#stage").append("<tr>");
+                $("#stage").append("<th>From:</th><th>To:</th><th>Leaving</th><th>Returning</th><th>People</th><th>Price</th><th> </th>");
+                $("#stage").append("</tr>");
+                $("#stage").append("<tr>");
+                $("#stage").append("<td>" + jd.from[i] + "</td><td>" + jd.to[i] + "</td><td>" + jd.leave[i] + "</td><td>" + jd.return[i] + "</td><td>" + jd.people[i] + "</td><td>" + jd.price[i] + "</td><td><button class='btn btn-default' num='" + i + "'>Add to Cart</button></td>");
+                $("#stage").append("</tr>");
+                $("#stage").append("<tr><td colspan='6'></td></tr>");
+            }
+
+        });
+
+
+
+        function search() {
+            ok = false;
+            $("#result").slideUp(0, function() {
+                $("#stage").html("");
+                for (i = 0; i < jd.name.length; i++) {
+                    if (jd.people[i] == (parseInt($("#adult").val()) + parseInt($("#children").val())) && jd.from[i].toLowerCase().includes($("#from").val().toLowerCase()) && jd.to[i].toLowerCase().includes($("#to").val().toLowerCase()) && jd.leave[i].includes($("#leave").val()) && jd.return[i].includes($("#return").val())) {
+                        $("#stage").append("<tr>");
+                        $("#stage").append("<td colspan='2'><h2>" + jd.name[i] + "<h2></td>");
+                        $("#stage").append("<td><img src='" + jd.icon[i] + "' height='60'></td>");
+                        $("#stage").append("</tr>");
+                        $("#stage").append("<tr>");
+                        $("#stage").append("<th>From:</th><th>To:</th><th>Leaving</th><th>Returning</th><th>People</th><th>Price</th><th> </th>");
+                        $("#stage").append("</tr>");
+                        $("#stage").append("<tr>");
+                        $("#stage").append("<td>" + jd.from[i] + "</td><td>" + jd.to[i] + "</td><td>" + jd.leave[i] + "</td><td>" + jd.return[i] + "</td><td>" + jd.people[i] + "</td><td>" + jd.price[i] + "</td><td><button class='btn btn-default' num='" + i + "'>Add to Cart</button></td>");
+                        $("#stage").append("</tr>");
+                        $("#stage").append("<tr><td colspan='6'></td></tr>");
+                        ok = true;
+                    }
+
+                }
+            });
+            $("#result").slideDown(1000);
+            if (!ok) {
+                $("#stage").append("<tr>");
+                $("#stage").append("<td><h1>No Matched Result</h1></td>");
+                $("#stage").append("</tr>");
+            }
+        }
+    </script>
+
+</head>
+
+<body style="background-color: lightgray">
+ <header>
+        <nav class="navbar navbar-inverse bg-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                    <b></b><a class="navbar-brand" href="index.html">HappyTravelLtd.</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="flight.html">FLIGHT</a></li>
+                        <li><a href="hotels.html">HOTEL</a></li>
+                        <li><a href="specialOffer.html">SPECIAL OFFERS</a></li>
+                        <li><a href="contactus.html">CONTACTS US</a></li>
+                        <li><a href="game.html">MINI GAME</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">
+                                  <span id="cart_icon" class="glyphicon glyphicon-shopping-cart"  data-toggle="modal" data-target="#myModal"><b id="itemNum" style="margin: 5px;">0</b></span>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.html">Loggout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Shopping Cart</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <tbody id="cart">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" id="clear">Clear Cart</button>
+                    <a href="payment.html" class="btn btn-default">Pay Now</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="row" style="margin: 50px">
+        <div class="col-xs-2"></div>
+        <div id="searchForm" class="col-xs-8" style="background-color: darkgray;border-radius: 5px;">
+            <div style="height: 1px"></div>
+            <center>
+                <h1>Searching for Flight:</h1>
+            </center>
+            <div style="margin: 10px">
+                <input type="text" id="from" class="form-control" placeholder="Where are you flying from?">
+                <input type="text" id="to" class="form-control" placeholder="Where are you want to go?">
+                <br>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <input type="text" class="form-control" placeholder="Leaving" onfocus="(this.type='date')" id="leave">
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="text" class="form-control" placeholder="Returning" onfocus="(this.type='date')" id="return">
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <select class="selectpicker form-control" id="adult">
+                    <option value="1" selected>1 adult</option>
+                    <option value="2">2 adult</option>
+                    <option value="3">3 adult</option>
+                    <option value="4">4 adult</option>
+                    <option value="5">5 adult</option>
+                    <option value="6">6 adult</option>
+                    <option value="7">7 adult</option>
+                    <option value="8">8 adult</option>
+                    <option value="9+">9+  adult</option>
+                </select>
+                    </div>
+                    <div class="col-xs-6">
+                        <select class="selectpicker form-control" id="children">
+                    <option value="0" selected>0 children</option>
+                    <option value="1">1 children</option>
+                    <option value="2">2 children</option>
+                    <option value="3">3 children</option>
+                    <option value="4">4 children</option>
+                    <option value="5">5 children</option>
+                    <option value="6">6 children</option>
+                    <option value="7">7 children</option>
+                    <option value="8">8 children</option>
+                    <option value="9+">9+ children</option>
+                </select>
+                    </div>
+                </div>
+                <div style="height: 10px"></div>
+                <div class="row">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-11">
+                        <span class="pull-right"><button onclick="search()" class="btn btn-default"><text style="font-size: 18px">Search</text>
+                        </button></span>
+                    </div>
+                </div>
+                <div style="height: 10px"></div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- End of Search -->
+    <div class="container" style="background-color: white; border-radius: 5px" id="result">
+        <div style="margin: 10px">
+            <table class="table">
+                <tbody id="stage">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <!-- End of Content -->
+
+    <hr> Copyright by HappyTravelLtd.
+</body>
+
+</html>

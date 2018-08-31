@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HappyTravelLtd.</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/ecmascript">
+        $(document).ready(function() {
+            $("#login").click(function() {
+                var email = $("#email").val();
+                var pwd = $("#pwd").val();
+
+                if (email == "123@gmail.com" && pwd == "123") {
+                    window.location.href = "loggedin.html";
+                } else {
+                    alert("Invaild Email or Password");
+                }
+            });
+            $("#discount").hide();
+            $("#coupon").focusout(function() {
+                $(this).hide();
+                $("#total").hide();
+                $("#discount").fadeIn(500);
+            });
+        });
+    </script>
+
+</head>
+
+<body style="background-color: lightgray">
+    <header>
+        <nav class="navbar navbar-inverse bg-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                    <b></b><a class="navbar-brand" href="index.html">HappyTravelLtd.</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="flight.html">FLIGHT</a></li>
+                        <li><a href="hotels.html">HOTEL</a></li>
+                        <li><a href="specialOffer.html">SPECIAL OFFERS</a></li>
+                        <li><a href="contactus.html">CONTACTS US</a></li>
+                        <li><a href="game.html">MINI GAME</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--  <li><a href="#">Link</a></li> -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
+                            <ul class="dropdown-menu" style="background-color: #222">
+                                <li style="margin: 5px">
+                                    <div class="form-group">
+                                        <label for="email" style="color: lightgray; width: 200px">Email address:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd" style="color: lightgray">Password:</label>
+                                        <input type="password" class="form-control" id="pwd" placeholder="Password">
+                                    </div>
+                                    <div class="form-group"><a href="Register.html" style="color: gray">&nbsp;Register Now!</a></div>
+
+                                    <div class="form-group">
+                                        <button id="login" class="btn btn-default" style="float: right; margin: 5px">Login</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+
+
+                <!-- CREDIT CARD FORM STARTS HERE -->
+                <div class="panel panel-default credit-card-box">
+                    <div class="panel-heading display-table">
+                        <div class="row display-tr">
+                            <h3>&nbsp;Payment Details</h3>
+                            <div class="display-td">
+                                <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label for="cardNumber">CARD NUMBER</label>
+                                        <div class="input-group">
+                                            <input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" required autofocus />
+                                            <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-7 col-md-7">
+                                    <div class="form-group">
+                                        <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                        <input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required />
+                                    </div>
+                                </div>
+                                <div class="col-xs-5 col-md-5 pull-right">
+                                    <div class="form-group">
+                                        <label for="cardCVC">CV CODE</label>
+                                        <input type="tel" class="form-control" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label for="couponCode">COUPON CODE</label>
+                                        <input type="text" id="coupon" class="form-control" name="couponCode" />
+                                        <h1 class="pull-right" id="total">Total: $12000</h1>
+                                        <div id="discount">
+                                                <text style="color: red;font-size: 30px">20% off</text>
+                                                <h1 class="pull-right">Total: $9600</h1>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <button class="subscribe btn btn-success btn-lg btn-block" type="button">Payment</button>
+                                </div>
+                            </div>
+                            <div class="row" style="display:none;">
+                                <div class="col-xs-12">
+                                    <p class="payment-errors"></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- CREDIT CARD FORM ENDS HERE -->
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <hr> Copyright by HappyTravelLtd.
+</body>
+
+</html>

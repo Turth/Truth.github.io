@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HappyTravelLtd.</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/ecmascript">
+        $(document).ready(function() {
+            $("#login").click(function() {
+                var email = $("#email").val();
+                var pwd = $("#pwd").val();
+
+                if (email == "123@gmail.com" && pwd == "123") {
+                    window.location.href = "loggedin.html";
+                } else {
+                    alert("Invaild Email or Password");
+                }
+            });
+            $().alert();
+            $("#q2").hide();
+            $("#q3").hide();
+            $("#q4").hide();
+            $("#q5").hide();
+            $("#suggest").hide();
+            $(".btn-success").click(function() {
+                $("#q1").slideUp(1000);
+                $("#q2").slideDown(1000);
+            });
+            $(".btn-warning").click(function() {
+                $("#q2").slideUp(1000);
+                $("#q3").slideDown(1000);
+            });
+            $(".btn-danger").click(function() {
+                $("#q3").slideUp(1000);
+                $("#q4").slideDown(1000);
+            });
+            $(".btn-info").click(function() {
+                $("#q4").slideUp(1000);
+                $("#q5").slideDown(1000);
+            });
+            $(".btn-default").click(function() {
+                $("#q5").slideUp(1000);
+                $("#suggest").show(1000);
+            });
+        });
+
+    </script>
+
+</head>
+
+<body style="background-color: lightgray">
+ <header>
+        <nav class="navbar navbar-inverse bg-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                    <b></b><a class="navbar-brand" href="index.html">HappyTravelLtd.</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="flight.html">FLIGHT</a></li>
+                        <li><a href="hotels.html">HOTEL</a></li>
+                        <li><a href="specialOffer.html">SPECIAL OFFERS</a></li>
+                        <li><a href="contactus.html">CONTACTS US</a></li>
+                        <li><a href="game.html">MINI GAME</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--  <li><a href="#">Link</a></li> -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
+                            <ul class="dropdown-menu" style="background-color: #222">
+                                <li style="margin: 5px">
+                                    <div class="form-group">
+                                        <label for="email" style="color: lightgray; width: 200px">Email address:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd" style="color: lightgray">Password:</label>
+                                        <input type="password" class="form-control" id="pwd" placeholder="Password">
+                                    </div>
+                                    <div class="form-group"><a href="Register.html" style="color: gray">&nbsp;Register Now!</a></div>
+
+                                    <div class="form-group">
+                                        <button id="login" class="btn btn-default" style="float: right; margin: 5px">Login</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <div style="height: 600px">
+        <div class="container">
+        <div id="q1" class="alert alert-success" role="alert" style="margin: 80px;">
+            <h1 class="alert-heading">Question 1</h1>
+            <h3>What is your hobbit?</h3>
+            <hr>
+            <div class="row">
+                <div class="col-xs-3">
+                    <button name="q1" class="btn btn-success" style="width: 100%;">Swimming</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q1" class="btn btn-success" style="width: 100%;">Shopping</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q1" class="btn btn-success" style="width: 100%;">Reading</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q1" class="btn btn-success" style="width: 100%;">Hiking</button>
+                </div>
+            </div>
+        </div>
+        <div id="q2" class="alert alert-warning" role="alert" style="margin: 80px;">
+            <h1 class="alert-heading">Question 2</h1>
+            <h3>There are Three kinds of flowers in front of you, which flower will you pick up?</h3>
+            <hr>
+            <div class="row">
+                <div class="col-xs-3">
+                    <button name="q2" class="btn btn-warning" style="width: 100%;">Red Rose</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q2" class="btn btn-warning" style="width: 100%;">Windflower</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q2" class="btn btn-warning" style="width: 100%;">Peace Lily</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q2" class="btn btn-warning" style="width: 100%;">None</button>
+                </div>
+            </div>
+        </div>
+        <div id="q3" class="alert alert-danger" role="alert" style="margin: 80px;">
+            <h1 class="alert-heading">Question 3</h1>
+            <h3>If you need to stay in a room for a week. You can only bring one thing with you. What will u bring?</h3>
+            <hr>
+            <div class="row">
+                <div class="col-xs-3">
+                    <button name="q3" class="btn btn-danger" style="width: 100%;">Book</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q3" class="btn btn-danger" style="width: 100%;">Pen</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q3" class="btn btn-danger" style="width: 100%;">Gym tool</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q3" class="btn btn-danger" style="width: 100%;">Ball</button>
+                </div>
+            </div>
+        </div>
+        <div id="q4" class="alert alert-info" role="alert" style="margin: 80px;">
+            <h1 class="alert-heading">Question 4</h1>
+            <h3>There are a great meal for your! What kind of food will you eat first??</h3>
+            <hr>
+            <div class="row">
+                <div class="col-xs-3">
+                    <button name="q4" class="btn btn-info" style="width: 100%;">Fish</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q4" class="btn btn-info" style="width: 100%;">Fruit</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q4" class="btn btn-info" style="width: 100%;">Meat</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q4" class="btn btn-info" style="width: 100%;">Sweat</button>
+                </div>
+            </div>
+        </div>
+        <div id="q5" class="alert alert-default" role="alert" style="margin: 80px;">
+
+            <h1 class="alert-heading">Question 5</h1>
+            <h3>The zombie days come. What will you bring with you?</h3>
+            <hr>
+            <div class="row">
+                <div class="col-xs-3">
+                    <button name="q5" class="btn btn-default" style="width: 100%;">Weapon</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q5" class="btn btn-default" style="width: 100%;">Food</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q5" class="btn btn-default" style="width: 100%;">Toys</button>
+                </div>
+                <div class="col-xs-3">
+                    <button name="q5" class="btn btn-default" style="width: 100%;">Water</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+        <!-- End of Question -->
+        <div class="container" id="suggest">
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="col-md-12">
+                        <h1>Following Places Recommanded to You!</h1>
+                    </div>
+                    <div class="col-xs-4">
+                        <center>
+                            <img src="img/hotflight1.jpg" alt="" width="90%">
+                            <a href="flight.html" class="btn btn-default" style="width: 90%"><h5>Barcelona</h5></a>
+                        </center>
+
+                    </div>
+                    <div class="col-xs-4">
+                        <center>
+                            <img src="img/hotflight2.jpg" alt="" width="90%">
+                            <a href="flight.html" class="btn btn-default" style="width: 90%; margin-bottom: 20px"><h5>GOA</h5></a>
+                        </center>
+                    </div>
+                    <div class="col-xs-4">
+                        <center>
+                            <img src="img/hotflight3.jpg" alt="" width="90%">
+                            <a href="flight.html" class="btn btn-default" style="width: 90%"><h5>PARIS</h5></a>
+                        </center>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <hr> Copyright by HappyTravelLtd.
+</body>
+
+</html>

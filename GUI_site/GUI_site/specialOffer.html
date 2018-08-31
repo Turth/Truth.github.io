@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HappyTravelLtd.</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/ecmascript">
+        $(document).ready(function() {
+            $("#login").click(function() {
+                var email = $("#email").val();
+                var pwd = $("#pwd").val();
+
+                if (email == "123@gmail.com" && pwd == "123") {
+                    window.location.href = "loggedin.html";
+                } else {
+                    alert("Invaild Email or Password");
+                }
+            });
+            $("#hotels").hide();
+        });
+        function showFlight(){
+            $("#hotels").hide();
+            $("#flights").show();
+            $("#btnF").removeClass("btn-default");
+            $("#btnF").addClass("btn-danger");
+            $("#btnH").removeClass("btn-danger");
+            $("#btnH").addClass("btn-default");
+        }
+        function showHotel(){
+            $("#hotels").show();
+            $("#flights").hide();
+            $("#btnH").removeClass("btn-default");
+            $("#btnH").addClass("btn-danger");
+            $("#btnF").removeClass("btn-danger");
+            $("#btnF").addClass("btn-default");
+        }
+    </script>
+</head>
+
+<body style="background-color: lightgray">
+ <header>
+        <nav class="navbar navbar-inverse bg-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                    <b></b><a class="navbar-brand" href="index.html">HappyTravelLtd.</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="flight.html">FLIGHT</a></li>
+                        <li><a href="hotels.html">HOTEL</a></li>
+                        <li><a href="specialOffer.html">SPECIAL OFFERS</a></li>
+                        <li><a href="contactus.html">CONTACTS US</a></li>
+                        <li><a href="game.html">MINI GAME</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--  <li><a href="#">Link</a></li> -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
+                            <ul class="dropdown-menu" style="background-color: #222">
+                                <li style="margin: 5px">
+                                    <div class="form-group">
+                                        <label for="email" style="color: lightgray; width: 200px">Email address:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd" style="color: lightgray">Password:</label>
+                                        <input type="password" class="form-control" id="pwd" placeholder="Password">
+                                    </div>
+                                    <div class="form-group"><a href="Register.html" style="color: gray">&nbsp;Register Now!</a></div>
+
+                                    <div class="form-group">
+                                        <button id="login" class="btn btn-default" style="float: right; margin: 5px">Login</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Speacial offer  for VTC Student !!</h1>
+        <div><button id="btnF"onclick="showFlight()" class="btn btn-danger" style="font-size: 30px">Flight</button><button id="btnH" onclick="showHotel()" class="btn btn-default" style="font-size: 30px">Hotel</button></div>
+        <div id="hotels" style="border-style: solid;border-color: #d9534f; border-radius: 5px; background-color: white">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="col-xs-12">
+                        <div style="margin: 10px">
+                            <img src="img/hotel/hotel1.jpg" alt="" width="50%">
+                            <div style="float: right; width: 48%">
+                                <h1>Star Hotel:</h1>
+                                <br>
+                                <h3>Best place for you to relax!! Wonder Building and Hotels!! Best for taking photo! Old school building only make more amazing</h3>
+                            </div>
+                            <center>
+                                <h1><del>$2000</del><b style="color: red">$1000</b></h1>
+                            </center>
+                            <a href="HotelDetails.html" class="btn btn-danger" style="width: 100%">Know More</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div style="margin: 10px">
+                            <img src="img/hotel/hotel2.jpg" alt="" width="50%">
+                            <div style="float: right; width: 48%">
+                                <h1>W14 Hotel:</h1>
+                                <br>
+                                <h3>Cheapest choice in Summer! Enjoy the most cost-effective chioce by go Maria now! Building! People! View! enjoy everythings you need in a trip.</h3>
+                            </div>
+                            <center>
+                                <h1><del>$1300</del><b style="color: red">$500</b></h1>
+                            </center>
+                            <a href="HotelDetails.html" class="btn btn-danger" style="width: 100%">Know More</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div style="margin: 10px">
+                            <img src="img/hotel/hotel3.jpg" alt="" width="50%">
+                            <div style="float: right; width: 48%">
+                                <h1>The Landmark London:</h1>
+                                <br>
+                                <h3>Best place for swimmer, sporter, teenagers! Enjoy your summer time surounded by sea!</h3>
+                            </div>
+                            <center>
+                                <h1><del>$3000</del><b style="color: red">$1700</b></h1>
+                            </center>
+                            <a href="HotelDetails.html" class="btn btn-danger" style="width: 100%">Know More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+        <div id="flights" style="border-style: solid;border-color: #d9534f; border-radius: 5px; background-color: white">
+            <div class="row">
+                 <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="col-xs-12">
+                        <div style="margin: 10px">
+                            <img src="img/hothotel1.jpg" alt="" width="70%">
+                            <div style="float: right; width: 28%">
+                                <h2>London:</h2>
+                                <br>
+                                <h4>Best place for you to relax!! Wonder Building and Hotels!! Best for taking photo! Old school building only make more amazing</h4>
+                            </div>
+                            <center>
+                                <h1><del>$8000</del><b style="color: red">$7500</b></h1>
+                            </center>
+                            <a href="flight.html" class="btn btn-danger" style="width: 100%">Know More</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div style="margin: 10px">
+                            <img src="img/hothotel2.jpg" alt="" width="70%">
+                            <div style="float: right; width: 28%">
+                                <h2>New Zealand:</h2>
+                                <br>
+                                <h4>Cheapest choice in Summer! Enjoy the most cost-effective chioce by go Maria now! Building! People! View! enjoy everythings you need in a trip.</h4>
+                            </div>
+                            <center>
+                                <h1><del>$5000</del><b style="color: red">$4000</b></h1>
+                            </center>
+                            <a href="flight.html" class="btn btn-danger" style="width: 100%">Know More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr> Copyright by HappyTravelLtd.
+</body>
+
+</html>

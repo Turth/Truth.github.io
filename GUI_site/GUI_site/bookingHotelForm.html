@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HappyTravelLtd.</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/ecmascript">
+        $(document).ready(function() {
+            $("#login").click(function() {
+                var email = $("#email").val();
+                var pwd = $("#pwd").val();
+
+                if (email == "123@gmail.com" && pwd == "123") {
+                    window.location.href = "loggedin.html";
+                } else {
+                    alert("Invaild Email or Password");
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body style="background-color: lightgray">
+    <header>
+        <nav class="navbar navbar-inverse bg-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                    <b></b><a class="navbar-brand" href="index.html">HappyTravelLtd.</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="flight.html">Flight</a></li>
+                        <li><a href="hotels.html">HOTEL</a></li>
+                        <li><a href="specialOffer.html">SPECIAL OFFERS</a></li>
+                        <li><a href="contactus.html">CONTACTS US</a></li>
+                    </ul>
+                    <!--
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+-->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--  <li><a href="#">Link</a></li> -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
+                            <ul class="dropdown-menu" style="background-color: #222">
+                                <li style="margin: 5px">
+                                    <div class="form-group">
+                                        <label for="email" style="color: lightgray; width: 200px">Email address:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd" style="color: lightgray">Password:</label>
+                                        <input type="password" class="form-control" id="pwd" placeholder="Password">
+                                    </div>
+                                    <div class="form-group"><a href="Register.html" style="color: gray">&nbsp;Register Now!</a></div>
+
+                                    <div class="form-group">
+                                        <button id="login" class="btn btn-default" style="float: right; margin: 5px">Login</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <!-- Content -->
+    <div class="row" style="margin: 50px">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8" style="background-color: darkgray;border-radius: 5px;">
+            <div style="height: 1px"></div>
+            <center>
+                <h3>Booking Room: Park Grand Paddington Court </h3>
+            </center>
+            <form action="payment.html" method="get">
+                <div style="margin: 10px">
+
+                    <br>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" placeholder="Check IN" onfocus="(this.type='date')" name="Check IN">
+
+                        </div>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" placeholder="Check Out" onfocus="(this.type='date')" name="return">
+                        </div>
+                        <br>
+                    </div>
+                    <br>
+                    <div class="row">
+                       <div class="col-xs-3">
+                            <select class="selectpicker form-control" name="Room">
+                    <option value="0" selected>0 Room</option>
+                    <option value="1">1 Room</option>
+                    <option value="2">2 Room</option>
+                    <option value="3">3 Room</option>
+                    <option value="4">4 Room</option>
+                    <option value="5">5 Room</option>
+                    <option value="6">6 Room</option>
+                    <option value="7">7 Room</option>
+                    <option value="8">8 Room</option>
+                    <option value="9+">9+ Room</option>
+                </select>
+                        </div>
+                        <div class="col-xs-3">
+                            <select class="selectpicker form-control" name="adult">
+                    <option value="1" selected>1 adult</option>
+                    <option value="2">2 adult</option>
+                    <option value="3">3 adult</option>
+                    <option value="4">4 adult</option>
+                    <option value="5">5 adult</option>
+                    <option value="6">6 adult</option>
+                    <option value="7">7 adult</option>
+                    <option value="8">8 adult</option>
+                    <option value="9+">9+  adult</option>
+                </select>
+                       <span style="color:red;align=center;">>18 years old</span>
+                        </div>
+                        <div class="col-xs-3">
+                            <select class="selectpicker form-control" name="child">
+                    <option value="0" selected>0 child</option>
+                    <option value="1">1 child</option>
+                    <option value="2">2 child</option>
+                    <option value="3">3 child</option>
+                    <option value="4">4 child</option>
+                    <option value="5">5 child</option>
+                    <option value="6">6 child</option>
+                    <option value="7">7 child</option>
+                    <option value="8">8 child</option>
+                    <option value="9+">9+ child</option>
+                </select>
+                       <span style="color:red;align=right;">0-17</span>
+                        </div>
+                        
+                    </div>
+                    <div style="height: 10px"></div>
+                    <div class="row">
+                        <div class="col-xs-1"></div>
+                        <div class="col-xs-11">
+                            <span class="pull-right"><button type="submit" class="btn btn-default"><text style="font-size: 18px">Book</text>
+                        </button></span>
+                        </div>
+                    </div>
+                    <div style="height: 10px"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- End of Search -->
+
+    <!-- End of Content -->
+
+    <div style="background-color: darkgray; height: 1px"></div>
+    Copyright by HappyTravelLtd.
+</body>
+
+</html>

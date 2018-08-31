@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HappyTravelLtd.</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/ecmascript">
+        $(document).ready(function() {
+            $("#login").click(function() {
+                var email = $("#email").val();
+                var pwd = $("#pwd").val();
+
+                if (email == "123@gmail.com" && pwd == "123") {
+                    window.location.href = "loggedin.html";
+                } else {
+                    alert("Invaild Email or Password");
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body style="background-color: lightgray">
+    <header>
+        <nav class="navbar navbar-inverse bg-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                    <b></b><a class="navbar-brand" href="index.html">HappyTravelLtd.</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="flight.html">FLIGHT</a></li>
+                        <li><a href="hotels.html">HOTEL</a></li>
+                        <li><a href="specialOffer.html">SPECIAL OFFERS</a></li>
+                        <li><a href="contactus.html">CONTACTS US</a></li>
+                        <li><a href="game.html">MINI GAME</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--  <li><a href="#">Link</a></li> -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
+                            <ul class="dropdown-menu" style="background-color: #222">
+                                <li style="margin: 5px">
+                                    <div class="form-group">
+                                        <label for="email" style="color: lightgray; width: 200px">Email address:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd" style="color: lightgray">Password:</label>
+                                        <input type="password" class="form-control" id="pwd" placeholder="Password">
+                                    </div>
+                                    <div class="form-group"><a href="Register.html" style="color: gray">&nbsp;Register Now!</a></div>
+
+                                    <div class="form-group">
+                                        <button id="login" class="btn btn-default" style="float: right; margin: 5px">Login</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <!-- Search and Fliter -->
+    <main class="cd-main-content">
+        <div class="cd-tab-filter-wrapper">
+            <div class="cd-tab-filter">
+                <ul class="cd-filters">
+                    <li class="placeholder">
+                        <a data-type="all" href="#0">All</a>
+                        <!-- selected option on mobile -->
+                    </li>
+                    <li class="filter"><a class="selected" href="#0" data-type="all">All</a></li>
+                    <li class="filter" data-filter=".newzealand"><a href="#0" data-type="newzealand">New Zealand</a></li>
+                    <li class="filter" data-filter=".london"><a href="#0" data-type="london">London</a></li>
+                </ul>
+                <!-- cd-filters -->
+            </div>
+            <!-- cd-tab-filter -->
+        </div>
+        <!-- cd-tab-filter-wrapper -->
+
+        <section class="cd-gallery">
+            <ul>
+                <li class="mix london check1 radio2 option3"><img src="img/hotel/hotel1.jpg" alt="Image 1"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix london check1 radio2 option2"><img src="img/hotel/hotel2.jpg" alt="Image 2"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix london check3 radio3 option1"><img src="img/hotel/hotel3.jpg" alt="Image 3"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix london check3 radio2 option4"><img src="img/hotel/hotel4.jpg" alt="Image 4"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix london check1 radio3 option2"><img src="img/hotel/hotel5.jpg" alt="Image 5"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix newzealand check2 radio3 option4"><img src="img/hotel/hotel6.jpg" alt="Image 6"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix newzealand check2 radio2 option1"><img src="img/hotel/hotel7.jpg" alt="Image 7"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white;">Know More</a></li>
+                <li class="mix london check1 radio3 option4"><img src="img/hotel/hotel8.jpg" alt="Image 8"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix newzealand check1 radio2 option3"><img src="img/hotel/hotel9.jpg" alt="Image 9"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix london check3 radio2 option4"><img src="img/hotel/hotel10.jpg" alt="Image 10"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix london check3 radio3 option2"><img src="img/hotel/hotel11.jpg" alt="Image 11"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix newzealand check1 radio3 option2"><img src="img/hotel/hotel12.jpg" alt="Image 12"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix newzealand check1 radio3 option1"><img src="img/hotel/hotel13.jpg" alt="Image 12"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix newzealand check1 radio3 option3"><img src="img/hotel/hotel14.jpg" alt="Image 12"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix newzealand check1 radio3 option4"><img src="img/hotel/hotel15.jpg" alt="Image 12"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="mix newzealand check1 radio3 option1"><img src="img/hotel/hotel16.jpg" alt="Image 12"><a href="HotelDetails.html" class="btn btn-default" style="width: 100%; background-color: #393939; color: white">Know More</a></li>
+                <li class="gap"></li>
+                <li class="gap"></li>
+                <li class="gap"></li>
+            </ul>
+            <div class="cd-fail-message">No results found</div>
+        </section>
+        <!-- cd-gallery -->
+        <div class="cd-filter">
+            <form>
+                <div class="cd-filter-block">
+                    <h4>Search</h4>
+
+                    <div class="cd-filter-content">
+                        <input type="search" placeholder="Hotel">
+                    </div>
+                    <!-- cd-filter-content -->
+                </div>
+                <!-- cd-filter-block -->
+
+                <div class="cd-filter-block">
+                    <h4>Price Range</h4>
+
+                    <ul class="cd-filter-content cd-filters list">
+                        <li>
+                            <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
+                            <label class="checkbox-label" for="checkbox1">$100~$1000</label>
+                        </li>
+
+                        <li>
+                            <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
+                            <label class="checkbox-label" for="checkbox2">$1001~2000</label>
+                        </li>
+
+                        <li>
+                            <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+                            <label class="checkbox-label" for="checkbox3">~$2001</label>
+                        </li>
+                    </ul>
+                    <!-- cd-filter-content -->
+                </div>
+                <!-- cd-filter-block -->
+
+                <div class="cd-filter-block">
+                    <h4>Star</h4>
+                    <div class="cd-filter-content">
+                        <div class="cd-select cd-filters">
+                            <select class="filter" name="selectThis" id="selectThis">
+								<option value="">Level of Star</option>
+								<option value=".option1">2</option>
+								<option value=".option2">3</option>
+								<option value=".option3">4</option>
+								<option value=".option4">5</option>
+							</select>
+                        </div>
+                        <!-- cd-select -->
+                    </div>
+                    <!-- cd-filter-content -->
+                </div>
+                <!-- cd-filter-block -->
+
+                <div class="cd-filter-block">
+                    <h4>Pet Allowed</h4>
+
+                    <ul class="cd-filter-content cd-filters list">
+                        <li>
+                            <input class="filter" data-filter="" type="radio" name="radioButton" id="radio1" checked>
+                            <label class="radio-label" for="radio1">All</label>
+                        </li>
+
+                        <li>
+                            <input class="filter" data-filter=".radio2" type="radio" name="radioButton" id="radio2">
+                            <label class="radio-label" for="radio2">Pet Care</label>
+                        </li>
+
+                        <li>
+                            <input class="filter" data-filter=".radio3" type="radio" name="radioButton" id="radio3">
+                            <label class="radio-label" for="radio3">Pet Rejected</label>
+                        </li>
+                    </ul>
+                    <!-- cd-filter-content -->
+                </div>
+                <!-- cd-filter-block -->
+            </form>
+
+            <a href="#0" class="cd-close">Close</a>
+        </div>
+        <!-- cd-filter -->
+
+        <a href="#0" class="cd-filter-trigger" style="color: gray">Filters</a>
+    </main>
+    <script src="js/jquery.mixitup.min.js"></script>
+    <script src="js/main.js"></script>
+    <footer>
+        <hr> Copyright by HappyTravelLtd.
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HappyTravelLtd.</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/ecmascript">
+        $(document).ready(function() {
+            $("#info").hide();
+            $("#pullup").hide();
+            $("#login").click(function() {
+                var email = $("#email").val();
+                var pwd = $("#pwd").val();
+
+                if (email == "123@gmail.com" && pwd == "123") {
+                    window.location.href = "loggedin.html";
+                } else {
+                    alert("Invaild Email or Password");
+                }
+            });
+            $("#pulldown").click(function() {
+                $("#pulldown").hide();
+                $("#pullup").show();
+                $("#info").slideDown(1000);
+            });
+            $("#pullup").click(function() {
+                $("#pulldown").show();
+                $("#pullup").hide();
+                $("#info").slideUp(1000);
+            });
+        });
+        $(function() {
+            ImgPreview();
+        });
+
+        var ImgPreview = function() {
+            $(".small").hover(function(e) {
+                jQuery("<img class='preview' src='" + this.src + "' />").appendTo("body");
+                $(".preview")
+                    .css("top", (e.pageY - 5) + "px")
+                    .css("left", (e.pageX + 5) + "px")
+                    .fadeIn("fast");
+            }, function() {
+                $(".preview").remove();
+            });
+
+            $(".small").mousemove(function(e) {
+                $(".preview")
+                    .css("top", (e.pageY - 5) + "px")
+                    .css("left", (e.pageX + 5) + "px")
+            });
+        };
+
+    </script>
+    <style>
+        #pulldown:hover,
+        #pullup:hover {
+            font-size: 40px;
+        }
+
+        img {
+            width: 100%;
+        }
+        .preview{
+            width: 400px;
+	        position:absolute;
+	        display:none;
+	    }
+
+    </style>
+</head>
+
+<body style="background-color: lightgray">
+ <header>
+        <nav class="navbar navbar-inverse bg-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                    <b></b><a class="navbar-brand" href="index.html">HappyTravelLtd.</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="flight.html">FLIGHT</a></li>
+                        <li><a href="hotels.html">HOTEL</a></li>
+                        <li><a href="specialOffer.html">SPECIAL OFFERS</a></li>
+                        <li><a href="contactus.html">CONTACTS US</a></li>
+                        <li><a href="game.html">MINI GAME</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--  <li><a href="#">Link</a></li> -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
+                            <ul class="dropdown-menu" style="background-color: #222">
+                                <li style="margin: 5px">
+                                    <div class="form-group">
+                                        <label for="email" style="color: lightgray; width: 200px">Email address:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd" style="color: lightgray">Password:</label>
+                                        <input type="password" class="form-control" id="pwd" placeholder="Password">
+                                    </div>
+                                    <div class="form-group"><a href="Register.html" style="color: gray">&nbsp;Register Now!</a></div>
+
+                                    <div class="form-group">
+                                        <button id="login" class="btn btn-default" style="float: right; margin: 5px">Login</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Park Grand Paddington Court (Four Star)</h1>
+        <p>27 Devonshire Terrace, Paddington, London, England, W2 3DP, England， 3077 5740</p>
+    </div>
+    <div class="container" style="background-color: white; border-radius: 50px">
+        <div class="row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10">
+                <center><img src="img/hotel.jpg" alt=""></center>
+            </div>
+            <div class="col-xs-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-2"><img src="img/room1.jpg" class="small" alt=""></div>
+            <div class="col-xs-2"><img src="img/room2.jpg"class="small"  alt=""></div>
+            <div class="col-xs-2"><img src="img/room3.jpg" class="small" alt=""></div>
+            <div class="col-xs-2"><img src="img/gym1.jpg" class="small" alt=""></div>
+            <div class="col-xs-2"><img src="img/restaurant1.jpg"  class="small" alt=""></div>
+            <div class="col-xs-1"></div>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Hot info -->
+    <div class="row">
+        <div class="container">
+            <h1>Hotel Info <span class="glyphicon glyphicon-chevron-down pull-right" id="pulldown"></span><span class="glyphicon glyphicon-chevron-up pull-right" id="pullup"></span></h1>
+            <div id="info">
+                <div class="col-xs-4">
+                    <h4>Main Services / Facilities</h4>
+                    <ul alight="center">
+                        <li style="font-size:18px">200 non-smoking rooms</li>
+                        <li style="font-size:18px">Restaurant and bar / lounge</li>
+                        <li style="font-size:18px">Breakfast is served</li>
+                        <li style="font-size:18px">24 hour reception</li>
+                        <li style="font-size:18px">Multilingual service staff</li>
+                        <li style="font-size:18px">Free Wi-Fi</li>
+                    </ul>
+
+
+                </div>
+                <div class="col-xs-4">
+                    <h4>Family Fun</h4>
+                    <ul>
+                        <li style="font-size:18px">Private bathroom</li>
+                        <li style="font-size:18px">Free dressing supplies</li>
+                        <li style="font-size:18px">Breakfast is served</li>
+                        <li style="font-size:18px">Laundry facilities</li>
+                        <li style="font-size:18px">Multilingual service staff</li>
+                        <li style="font-size:18px">Coffee machine / tea maker</li>
+                    </ul>
+                </div>
+                <div class="col-xs-4">
+                    <h4>Nearby attractions</h4>
+                    <ul>
+                        <li style="font-size:18px">Located in Beipiwat</li>
+                        <li style="font-size:18px">Royal Albert Hall (22 minutes walk)</li>
+                        <li style="font-size:18px">Buckingham Palace (41 minutes by foot)</li>
+                        <li style="font-size:18px">Kensington Gardens (12 minutes walk)</li>
+                        <li style="font-size:18px">Madame Tussauds Wax Museum (27 minutes walk)</li>
+                        <li style="font-size:18px">Marble Arch (20 minutes on foot)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--  End of hotel info -->
+    <hr>
+    <!--    Some Text  -->
+    <div class="container">
+        <center>
+            <div style="width: 70%">
+
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Brooklyn,+New+York,+NY,+United+States&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=61.282355,146.513672&amp;ie=UTF8&amp;hq=&amp;hnear=Brooklyn,+Kings,+New+York&amp;ll=40.649974,-73.950005&amp;spn=0.01628,0.025663&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+                </div>
+                <br>
+                <div style="width:100%">
+                    <a href="bookingHotelForm.html" class="btn btn-success" style="float:right;">
+                        <h2>Booking Right Now!</h2>
+                    </a>
+                </div>
+
+
+            </div>
+        </center>
+    </div>
+
+    <hr> Copyright by HappyTravelLtd.
+</body>
+
+</html>
